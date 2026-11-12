@@ -1,0 +1,17 @@
+name: Agent App no-op deploy verification
+
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: agent-app-verification
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+      - run: echo "GitHub App workflow dispatch verified; no deployment is performed."
